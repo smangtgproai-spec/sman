@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import "katex/dist/katex.min.css";
+
+@layer base {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Prevent automatic iOS zoom when focusing form inputs on mobile screens */
+  @media screen and (max-width: 640px) {
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="email"],
+    select,
+    textarea {
+      font-size: 16px !important;
+    }
+  }
+}
+
+/* Utilities for mobile scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area insets for notched phones */
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+/* Exam Anti-Cheat Security Styles */
+.exam-secure-mode {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+/* Print/Screenshot Hiding */
+@media print {
+  body.exam-in-progress * {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  body.exam-in-progress::before {
+    content: "PERINGATAN: Mencetak atau Mengambil Screenshot Lembar Ujian Dilarang Keras oleh Sistem Integritas SmanGt EduSecure CBT." !important;
+    display: block !important;
+    visibility: visible !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    color: red !important;
+    text-align: center !important;
+    padding-top: 100px !important;
+  }
+}
+
+/* Watermark Pattern */
+.bg-watermark {
+  background-image: radial-gradient(rgba(100, 116, 139, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}

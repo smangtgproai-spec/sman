@@ -1,0 +1,6 @@
+{
+  "name": "SmanGt EduSecure CBT - Sistem Ujian Online Terproteksi Anti-Curang",
+  "description": "Aplikasi ujian berbasis web SmanGt EduSecure CBT dengan proteksi keamanan tinggi: anti split-screen, anti copy text, anti floating window, anti screenshot, dan deteksi perpindahan tab.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
